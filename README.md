@@ -1,15 +1,14 @@
-# SegmentedShape
+# Segmented Shape
 
 A lightweight, modern Jetpack Compose library for creating static and animated segmented shapes for buttons, lists, cards, and custom controls.
 
-[![JitPack](https://jitpack.io/v/NhuHuy79/SegmentedShape.svg?style=flat-square)](https://jitpack.io/#NhuHuy79/SegmentedShape)
+[![](https://jitpack.io/v/NhuHuy-79/SegmentedShape.svg)](https://jitpack.io/#NhuHuy-79/SegmentedShape)
 ![Android](https://img.shields.io/badge/Platform-Android-3DDC84?style=flat-square&logo=android)
 ![API](https://img.shields.io/badge/API-29%2B-brightgreen?style=flat-square)
 ![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-7F52FF?style=flat-square&logo=kotlin)
 ![Compose](https://img.shields.io/badge/Jetpack%20Compose-Ready-4285F4?style=flat-square&logo=jetpackcompose)
 ![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=flat-square)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/NhuHuy79/SegmentedShape/pulls)
-[![GitHub Stars](https://img.shields.io/github/stars/NhuHuy79/SegmentedShape?style=flat-square)](https://github.com/NhuHuy79/SegmentedShape/stargazers)
 
 ---
 
