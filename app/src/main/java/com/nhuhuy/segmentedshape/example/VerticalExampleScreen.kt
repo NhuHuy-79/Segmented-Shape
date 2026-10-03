@@ -130,8 +130,8 @@ fun VerticalExampleScreen() {
 
                 Box(
                     modifier = Modifier
-                        .width(56.dp)
-                        .height(48.dp)
+                        .width(64.dp)
+                        .height(56.dp)
                         .background(
                             color = MaterialTheme.colorScheme.primary,
                             shape = position.toSegmentedShape(
@@ -143,7 +143,8 @@ fun VerticalExampleScreen() {
                 ) {
                     Text(
                         text = item.label,
-                        style = MaterialTheme.typography.labelMedium,
+                        style = MaterialTheme.typography.bodyLarge,
+                        fontWeight = FontWeight.Medium,
                         color = MaterialTheme.colorScheme.onPrimary
                     )
                 }

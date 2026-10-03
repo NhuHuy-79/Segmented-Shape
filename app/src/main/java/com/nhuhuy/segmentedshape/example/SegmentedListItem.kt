@@ -15,6 +15,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.nhuhuy.segmented_shape.ItemPosition
 import com.nhuhuy.segmented_shape.constant.SegmentedDirection
@@ -35,7 +36,9 @@ fun SegmentedListItem(
     LazyRow(
         modifier = modifier,
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(4.dp)
+        horizontalArrangement = Arrangement.spacedBy(
+            space = 4.dp, alignment = Alignment.CenterHorizontally
+        )
     ) {
         itemsIndexed(
             items = ListItem.entries,
@@ -47,18 +50,21 @@ fun SegmentedListItem(
             )
 
             Box(
-                modifier = Modifier.size(48.dp)
+                modifier = Modifier
                     .background(
                         color = MaterialTheme.colorScheme.primary,
                         shape = position.toSegmentedShape(
-                            direction = SegmentedDirection.HORIZONTAL
+                            direction = SegmentedDirection.HORIZONTAL,
+                            large = 24.dp
                         )
                     ),
                 contentAlignment = Alignment.Center
             ){
                 Text(
+                    modifier = Modifier.padding(horizontal = 12.dp, vertical = 12.dp),
                     text = item.label,
-                    style = MaterialTheme.typography.bodyMedium,
+                    style = MaterialTheme.typography.bodyLarge,
+                    fontWeight = FontWeight.Medium,
                     color = MaterialTheme.colorScheme.onPrimary
                 )
             }

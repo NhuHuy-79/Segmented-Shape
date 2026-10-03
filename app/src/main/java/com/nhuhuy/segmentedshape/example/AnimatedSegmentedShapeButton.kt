@@ -35,7 +35,7 @@ fun AnimatedSegmentedShapeButton(
     Row(
         modifier = modifier,
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.spacedBy(8.dp)
+        horizontalArrangement = Arrangement.spacedBy(4.dp)
     ) {
         ButtonItem.entries.forEachIndexed { index, item ->
             val position = ItemPosition.fromIndexedItem(
@@ -44,7 +44,7 @@ fun AnimatedSegmentedShapeButton(
             )
 
             Button(
-                modifier = Modifier.width(56.dp),
+                modifier = Modifier,
                 onClick = { onClick(item) },
                 shape = position.toAnimatedSegmentedShape(
                     direction = direction,
