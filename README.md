@@ -22,14 +22,6 @@ A lightweight, modern Jetpack Compose library for creating static and animated s
 
 ---
 
-## 📸 Preview
-
-| Horizontal | Vertical |
-|------------|----------|
-| ![Horizontal Example](./screenshots/horizontal_example.png) | ![Vertical Example](./screenshots/vertical_example.png) |
-
----
-
 ## 📦 Installation
 
 ### 1. Add JitPack Repository
