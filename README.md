@@ -28,6 +28,7 @@ A lightweight, modern Jetpack Compose library for creating static and animated s
   <img src="./images/horizon_example.png" width="300" alt="Horizontal"/>
   <img src="./images/vertical_example.png" width="300" alt="Vertical"/>
 </p>
+
 ---
 
 ## 📦 Installation
