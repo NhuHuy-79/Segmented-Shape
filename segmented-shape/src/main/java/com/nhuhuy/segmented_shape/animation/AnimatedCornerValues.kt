@@ -8,12 +8,27 @@ import androidx.compose.runtime.Immutable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.unit.Dp
 
+/**
+ * Holds the pair of [CornerValue] configurations representing the initial (unselected)
+ * and target animated (selected) states for shape transitions.
+ *
+ * @property initialValue Corner values applied when unselected or in normal state.
+ * @property animatedValue Corner values applied when selected or in animated state.
+ */
 @Immutable
 data class AnimatedCornerValues(
     val initialValue: CornerValue,
     val animatedValue: CornerValue
 )
 
+/**
+ * Encapsulates corner radius values for all four corners of a shape.
+ *
+ * @property topStart Radius for the top-start corner.
+ * @property topEnd Radius for the top-end corner.
+ * @property bottomStart Radius for the bottom-start corner.
+ * @property bottomEnd Radius for the bottom-end corner.
+ */
 @Immutable
 data class CornerValue(
     val topStart: Dp,
@@ -22,6 +37,9 @@ data class CornerValue(
     val bottomEnd: Dp
 )
 
+/**
+ * Internal composable function that animates corner radii using [animateDpAsState].
+ */
 @Composable
 internal fun animatedRoundedCornerShape(
     triggerAnimation: Boolean,
