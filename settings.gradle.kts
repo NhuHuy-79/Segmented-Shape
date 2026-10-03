@@ -24,4 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "SegmentedShape"
 include(":app")
- 
+include(":segmented-shape")
