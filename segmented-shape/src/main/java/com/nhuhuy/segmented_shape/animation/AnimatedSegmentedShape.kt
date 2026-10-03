@@ -21,7 +21,7 @@ import com.nhuhuy.segmented_shape.constant.DefaultAnimatedSegmentedValue
  * @param animatedToSelected `true` if the item is selected/active, triggering the animation to fully rounded corners;
  * `false` to animate back to default segmented shape.
  * @param animationSpec The [AnimationSpec] used for animating corner radius values.
- * Defaults to [DefaultAnimatedSegmentedValue.dpSpringAnimation].
+ * Defaults to [DefaultAnimatedSegmentedValue.dpAnimationSpec].
  * @return An animated [RoundedCornerShape] reflecting the current animation state.
  */
 @Composable
@@ -30,7 +30,7 @@ fun ItemPosition.toAnimatedSegmentedShape(
     large: Dp = DefaultAnimatedSegmentedValue.largeValue,
     small: Dp = DefaultAnimatedSegmentedValue.smallValue,
     animatedToSelected: Boolean,
-    animationSpec: AnimationSpec<Dp> = DefaultAnimatedSegmentedValue.dpSpringAnimation,
+    animationSpec: AnimationSpec<Dp> = DefaultAnimatedSegmentedValue.dpAnimationSpec,
 ): RoundedCornerShape {
 
     val animatedCornerValues = when (direction) {

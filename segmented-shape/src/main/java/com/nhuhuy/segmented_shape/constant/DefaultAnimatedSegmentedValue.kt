@@ -1,8 +1,12 @@
 package com.nhuhuy.segmented_shape.constant
 
+import androidx.compose.animation.core.AnimationSpec
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.Spring
 import androidx.compose.animation.core.SpringSpec
-import androidx.compose.animation.core.VisibilityThreshold
+import androidx.compose.animation.core.TweenSpec
 import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.tween
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.nhuhuy.segmented_shape.animation.CornerValue
@@ -34,5 +38,8 @@ object DefaultAnimatedSegmentedValue {
     /**
      * Default spring animation specification used for animating corner radius transitions.
      */
-    val dpSpringAnimation: SpringSpec<Dp> = spring(visibilityThreshold = Dp.VisibilityThreshold)
+    val dpAnimationSpec: AnimationSpec<Dp> = tween(
+        durationMillis = 180,
+        easing = FastOutSlowInEasing
+    )
 }

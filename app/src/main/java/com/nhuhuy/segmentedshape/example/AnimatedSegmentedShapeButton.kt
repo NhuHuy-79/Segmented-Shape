@@ -1,7 +1,11 @@
 package com.nhuhuy.segmentedshape.example
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -18,14 +22,15 @@ enum class ButtonItem(val label: String) {
     SETTING("Label"),
     HOME("Home"),
     DETAIL("Detail"),
-    CAMERA("Camera")
+    CAMERA("Camera"),
 }
 
 @Composable
 fun AnimatedSegmentedShapeButton(
     modifier: Modifier = Modifier,
     selectedItem: ButtonItem,
-    onClick: (ButtonItem) -> Unit
+    direction: SegmentedDirection = SegmentedDirection.HORIZONTAL,
+    onClick: (ButtonItem) -> Unit,
 ) {
     Row(
         modifier = modifier,
@@ -39,16 +44,18 @@ fun AnimatedSegmentedShapeButton(
             )
 
             Button(
+                modifier = Modifier.width(56.dp),
                 onClick = { onClick(item) },
                 shape = position.toAnimatedSegmentedShape(
-                    direction = SegmentedDirection.HORIZONTAL,
-                    animatedToSelected = selectedItem == item
-                )
+                    direction = direction,
+                    animatedToSelected = selectedItem == item,
+                    large = 24.dp,
+                ),
             ) {
                 Text(
                     text = item.label,
                     style = MaterialTheme.typography.bodyMedium,
-                    fontWeight = FontWeight.Medium
+                    fontWeight = FontWeight.Medium,
                 )
             }
         }
