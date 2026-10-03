@@ -18,7 +18,7 @@ A lightweight, modern Jetpack Compose library for creating static and animated s
 - 🎬 **Animated Segmented Shapes**: Smooth corner animation when items transition between default and selected states.
 - 🔄 **Multi-directional Support**: Works seamlessly in both `HORIZONTAL` and `VERTICAL` orientations.
 - 🎯 **Automatic Position Helper**: Calculate item position effortlessly with `ItemPosition.fromIndexedItem(count, index)`.
-- 🎨 **Fully Customizable**: Adjust outer (`large`) and inner (`small`) radii, as well as animation specifications (`AnimationSpec`).
+- 🎨 **Fully Customizable**: Adjust outer (`large`) and inner (`small`) radius, as well as animation specifications (`AnimationSpec`).
 
 ---
 
