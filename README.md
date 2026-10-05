@@ -22,6 +22,15 @@ A lightweight, modern Jetpack Compose library for creating static and animated s
 
 ---
 
+## 📸 Preview
+
+<p align="center">
+  <img src="./images/horizon_example.png" width="300" alt="Horizontal"/>
+  <img src="./images/vertical_example.png" width="300" alt="Vertical"/>
+</p>
+
+---
+
 ## 📦 Installation
 
 ### 1. Add JitPack Repository
@@ -45,7 +54,7 @@ Add the library dependency to your module's `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation("com.github.NhuHuy79:SegmentedShape:1.0.0")
+    implementation("com.github.NhuHuy-79:SegmentedShape:1.0.0")
 }
 ```
 
