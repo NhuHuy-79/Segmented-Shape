@@ -58,7 +58,7 @@ internal fun ItemPosition.toVerticalSegmentedShape(
     }
 }
 
-internal fun horizontalRoundedCornerShape(
+fun horizontalRoundedCornerShape(
     start: Dp,
     end: Dp,
 ) = RoundedCornerShape(
@@ -68,7 +68,7 @@ internal fun horizontalRoundedCornerShape(
     bottomEnd = end,
 )
 
-internal fun verticalRoundedCornerShape(
+fun verticalRoundedCornerShape(
     top: Dp,
     bottom: Dp,
 ) = RoundedCornerShape(
