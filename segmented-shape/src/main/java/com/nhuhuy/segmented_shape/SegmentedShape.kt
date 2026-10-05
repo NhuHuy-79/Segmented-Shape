@@ -58,6 +58,16 @@ internal fun ItemPosition.toVerticalSegmentedShape(
     }
 }
 
+/**
+ * Creates a [RoundedCornerShape] with symmetrical corner radii for horizontal layouts.
+ *
+ * The [start] radius is applied to both `topStart` and `bottomStart`, while the [end] radius
+ * is applied to both `topEnd` and `bottomEnd`.
+ *
+ * @param start Radius for the start corners.
+ * @param end Radius for the end corners.
+ * @return A [RoundedCornerShape] configured for horizontal item layout.
+ */
 fun horizontalRoundedCornerShape(
     start: Dp,
     end: Dp,
@@ -68,6 +78,16 @@ fun horizontalRoundedCornerShape(
     bottomEnd = end,
 )
 
+/**
+ * Creates a [RoundedCornerShape] with symmetrical corner radii for vertical layouts.
+ *
+ * The [top] radius is applied to both `topStart` and `topEnd`, while the [bottom] radius
+ * is applied to both `bottomStart` and `bottomEnd`.
+ *
+ * @param top Radius for the top corners.
+ * @param bottom Radius for the bottom corners.
+ * @return A [RoundedCornerShape] configured for vertical item layout.
+ */
 fun verticalRoundedCornerShape(
     top: Dp,
     bottom: Dp,
