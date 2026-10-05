@@ -8,7 +8,7 @@ A lightweight, modern Jetpack Compose library for creating static and animated s
 ![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-7F52FF?style=flat-square&logo=kotlin)
 ![Compose](https://img.shields.io/badge/Jetpack%20Compose-Ready-4285F4?style=flat-square&logo=jetpackcompose)
 ![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=flat-square)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/NhuHuy79/SegmentedShape/pulls)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/NhuHuy-79/SegmentedShape/pulls)
 
 ---
 
@@ -16,6 +16,7 @@ A lightweight, modern Jetpack Compose library for creating static and animated s
 
 - 📐 **Static Segmented Shapes**: Easily generate rounded corner shapes for items based on their position (`FIRST`, `MIDDLE`, `LAST`, `SINGLE`).
 - 🎬 **Animated Segmented Shapes**: Smooth corner animation when items transition between default and selected states.
+- ⚡ **LazyList DSL Extensions**: Integrated `segmentedItems` and `segmentedItemIndexed` extensions for `LazyColumn` and `LazyRow`.
 - 🔄 **Multi-directional Support**: Works seamlessly in both `HORIZONTAL` and `VERTICAL` orientations.
 - 🎯 **Automatic Position Helper**: Calculate item position effortlessly with `ItemPosition.fromIndexedItem(count, index)`.
 - 🎨 **Fully Customizable**: Adjust outer (`large`) and inner (`small`) radius, as well as animation specifications (`AnimationSpec`).
@@ -62,9 +63,41 @@ dependencies {
 
 ## 🚀 Quick Start & Usage
 
-### 1. Static Segmented Shape
+### 1. LazyList Extensions (`segmentedItems` & `segmentedItemIndexed`)
 
-Use `toSegmentedShape()` to generate a `RoundedCornerShape` suited for the item's position in a group.
+Use `segmentedItems` or `segmentedItemIndexed` inside `LazyRow` or `LazyColumn` to automatically receive each item's `ItemPosition`.
+
+```kotlin
+import com.nhuhuy.segmented_shape.constant.SegmentedDirection
+import com.nhuhuy.segmented_shape.lazy_list.segmentedItems
+import com.nhuhuy.segmented_shape.toSegmentedShape
+
+@Composable
+fun SegmentedListExample(items: List<String>) {
+    LazyRow(horizontalArrangement = Arrangement.spacedBy(4.dp)) {
+        segmentedItems(items) { item, position ->
+            Box(
+                modifier = Modifier
+                    .background(
+                        color = MaterialTheme.colorScheme.primary,
+                        shape = position.toSegmentedShape(
+                            direction = SegmentedDirection.HORIZONTAL,
+                            large = 16.dp,
+                            small = 4.dp
+                        )
+                    )
+                    .padding(horizontal = 16.dp, vertical = 8.dp)
+            ) {
+                Text(text = item, color = MaterialTheme.colorScheme.onPrimary)
+            }
+        }
+    }
+}
+```
+
+### 2. Static Segmented Shape
+
+Use `toSegmentedShape()` directly with manual position calculations.
 
 ```kotlin
 import com.nhuhuy.segmented_shape.ItemPosition
@@ -99,7 +132,7 @@ fun StaticSegmentedRow(items: List<String>) {
 }
 ```
 
-### 2. Animated Segmented Buttons
+### 3. Animated Segmented Buttons
 
 Use `toAnimatedSegmentedShape()` to create buttons that smoothly animate their corners when selected.
 
@@ -136,7 +169,7 @@ fun AnimatedSegmentedGroup(
 }
 ```
 
-### 3. Vertical Segmented Shapes
+### 4. Vertical Segmented Shapes
 
 Simply set `direction = SegmentedDirection.VERTICAL` to apply shapes in vertical lists or button groups.
 
@@ -160,7 +193,7 @@ Box(
 ## 🛠 API Reference
 
 ### `ItemPosition`
-Enum representing the position of an item:
+Enum representing the position of an item in a sequence:
 - `FIRST`: Top or Start item.
 - `MIDDLE`: Intermediate item.
 - `LAST`: Bottom or End item.
@@ -168,6 +201,11 @@ Enum representing the position of an item:
 
 Helper method:
 `ItemPosition.fromIndexedItem(count: Int, index: Int): ItemPosition`
+
+### `LazyListScope` Extensions
+DSL extensions for `LazyColumn` and `LazyRow` supporting both `List<T>` and `Array<T>`:
+- `segmentedItems(items, key, contentType, itemContent)`: Passes `(item, position)` to `itemContent`.
+- `segmentedItemIndexed(items, key, contentType, itemContent)`: Passes `(index, item, position)` to `itemContent`.
 
 ### `ItemPosition.toSegmentedShape(...)`
 | Parameter | Type | Default | Description |
@@ -185,12 +223,16 @@ Helper method:
 | `animatedToSelected` | `Boolean` | Required | `true` if item is selected (animates to fully rounded) |
 | `animationSpec` | `AnimationSpec<Dp>` | `tween(180, FastOutSlowIn)` | Custom animation specification |
 
+### Corner Shape Helpers
+- `horizontalRoundedCornerShape(start: Dp, end: Dp)`: Returns a `RoundedCornerShape` with symmetrical `start` and `end` radii.
+- `verticalRoundedCornerShape(top: Dp, bottom: Dp)`: Returns a `RoundedCornerShape` with symmetrical `top` and `bottom` radii.
+
 ---
 
 ## 📄 License
 
 ```text
-Copyright 2026 NhuHuy79
+Copyright 2026 NhuHuy-79
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
