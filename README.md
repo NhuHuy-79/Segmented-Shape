@@ -54,7 +54,7 @@ Add the library dependency to your module's `build.gradle.kts`:
 
 ```kotlin
 dependencies {
-    implementation("com.github.NhuHuy79:SegmentedShape:1.0.0")
+    implementation("com.github.NhuHuy-79:SegmentedShape:1.0.0")
 }
 ```
 
